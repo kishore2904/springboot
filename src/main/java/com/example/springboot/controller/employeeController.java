@@ -22,9 +22,9 @@ public class employeeController {
             employeeRepo.findAll().forEach(employeeList::add);
 
             if(employeeList.isEmpty()){
-                return new ResponseEntity<>(employeeList,HttpStatus.NO_CONTENT);
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>(employeeList,HttpStatus.OK);
         }
         catch (Exception exception){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
